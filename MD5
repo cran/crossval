@@ -1,0 +1,11 @@
+c3d142bc5199d5b220da8cbcc71b55b2 *DESCRIPTION
+e0baa62d86a801af8f89ec390950c19b *NAMESPACE
+039a6573d4459dc145f57f793c394bcf *NEWS
+17f6782ec5bee77c52e0cb16dcc6bf2d *R/confusionMatrix.R
+7d204b4eed4bfd222d6eeed517a77f39 *R/crossval.R
+99b719f31ea9fdc730200be80d748fc2 *R/diagnosticErrors.R
+7c12fd795594331147e85b1e692cd3dc *man/confusionMatrix.Rd
+99718068b79dd96d34dc993533c86ef4 *man/crossval-internal.Rd
+5f5e7f4395ce59ffcfbf78096e4fe6dc *man/crossval.Rd
+79f14a8bb58e413bbe2f02e3c489fb8b *man/crossval.package.Rd
+a4a4222215bfaa951a97fd13fae0fa05 *man/diagnosticErrors.Rd
