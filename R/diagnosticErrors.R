@@ -1,4 +1,4 @@
-### diagnosticErrors.R  (2014-03-29)
+### diagnosticErrors.R  (2014-04-24)
 ###
 ###    Diagnostic Errors: Accuracy, Sensitivity, Specificity, PPV, NPV, LOR 
 ###
@@ -49,7 +49,7 @@ diagnosticErrors = function(cm)
   npv = TN/notSignificant   # negative predictive value, TNDR
 # fndr = 1-npv
 
-  lor = log(TP*TN/(FN*FP))  # log odds ratio
+  lor = log(TP)+log(TN)-log(FN)-log(FP) # log odds ratio
                             # = log ( sens/(1-sens)*spec/(1-spec) )
                             # = log ( ppv/(1-ppv)*npv/(1-npv) )
 

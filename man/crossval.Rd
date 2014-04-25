@@ -15,7 +15,7 @@ crossval(predfun, X, Y, K=10,  B=20, verbose=TRUE, ...)
   \item{...}{optional arguments for \code{predfun}}
 }
 \description{
-  \code{crossval} performs K-fold cross validation with B repetitions.  If Y is a factor then balanced sampling is used (i.e. in each fold each category is represented).
+  \code{crossval} performs K-fold cross validation with B repetitions.  If \code{Y} is a factor then balanced sampling is used (i.e. in each fold each category is represented in appropriate proportions).
 }
 
 \value{
@@ -43,6 +43,7 @@ crossval(predfun, X, Y, K=10,  B=20, verbose=TRUE, ...)
 # load "crossval" package
 library("crossval")
 
+# classification examples
 
 # set up lda prediction function
 predfun.lda = function(train.x, train.y, test.x, test.y, negative)
@@ -101,6 +102,44 @@ diagnosticErrors(cv.out$stat)
 #      acc       sens       spec        ppv        npv        lor 
 # 0.9947692  0.9923944  0.9976271  0.9980170  0.9909091 10.9125059 
 }
+
+
+# linear regression example
+
+data("attitude")
+y = attitude[,1] # rating variable
+x = attitude[,-1] # date frame with the remaining variables
+is.factor(y) # FALSE
+
+summary( lm(y ~ . , data=x) )
+
+# set up lm prediction function
+predfun.lm = function(train.x, train.y, test.x, test.y)
+{
+  lm.fit = lm(train.y ~ . , data=train.x)
+  ynew = predict(lm.fit, test.x )
+
+  # compute squared error risk (MSE)
+  out = mean( (ynew - test.y)^2 )
+
+  return( out )
+}
+
+
+# prediction MSE using all variables
+set.seed(12345)
+cv.out = crossval(predfun.lm, x, y, K=5, B=20)
+c(cv.out$stat, cv.out$stat.se) # 68.06480  2.91447
+
+# and only two variables
+cv.out = crossval(predfun.lm, x[,c(1,3)], y, K=5, B=20)
+c(cv.out$stat, cv.out$stat.se) # 52.855325  1.878877
+
+
+
+# for more examples (e.g. using cross validation in a regression or classification context)
+# see the R packages "sda", "care", or "binda".
+
 }
 \keyword{multivariate}
 

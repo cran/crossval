@@ -3,6 +3,16 @@
            RELEASE HISTORY OF THE "crossval" PACKAGE
 
 
+Version 1.0.1:
+
+- log odds ratio (lor) in diagnosticErrors() is now computed differently,
+  to avoid integer overflow.
+- added example in crossval help page for linear regression with MSE as 
+  estimated error.
+- "sda", "care", and "binda" are now suggested packages, containing 
+  further examples and applications. 
+
+
 Version 1.0.0:
 
 - First public release (March 2014)
