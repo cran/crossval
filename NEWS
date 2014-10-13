@@ -2,6 +2,13 @@
 
            RELEASE HISTORY OF THE "crossval" PACKAGE
 
+Version 1.0.2:
+
+- change of maintainer email address.
+- confusionMatrix() now returns the negative used as reference
+  as attached attribute.
+- diagnosticErrors() now also stores the negative attribute.
+
 
 Version 1.0.1:
 

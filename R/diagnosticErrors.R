@@ -1,4 +1,4 @@
-### diagnosticErrors.R  (2014-04-24)
+### diagnosticErrors.R  (2014-11-13)
 ###
 ###    Diagnostic Errors: Accuracy, Sensitivity, Specificity, PPV, NPV, LOR 
 ###
@@ -56,6 +56,7 @@ diagnosticErrors = function(cm)
 
   err = c(acc, sens, spec, ppv, npv, lor)
   names(err) = c("acc", "sens", "spec", "ppv", "npv", "lor")
+  attr(err, "negative") = attr(cm, "negative")
 
   return ( err )
 }

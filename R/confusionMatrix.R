@@ -1,4 +1,4 @@
-### confusionMatrix.R  (2014-03-29)
+### confusionMatrix.R  (2014-11-13)
 ###
 ###    Compute Confusion Matrix 
 ###
@@ -45,6 +45,7 @@ confusionMatrix = function(actual, predicted, negative="control")
 
   cm = c(FP, TP, TN, FN)  
   names(cm) = c("FP", "TP", "TN", "FN")
+  attr(cm, "negative") = negative
 
   return ( cm )
 }
