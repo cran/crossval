@@ -2,6 +2,12 @@
 
            RELEASE HISTORY OF THE "crossval" PACKAGE
 
+
+Version 1.0.3:
+
+- added import statements required by R-devel.
+
+
 Version 1.0.2:
 
 - change of maintainer email address.

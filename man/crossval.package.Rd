@@ -12,7 +12,7 @@ The "crossval" package implements generic functions for performing
 \author{Korbinian Strimmer (\url{http://strimmerlab.org/})}
 \references{
   
-  Website: \url{http://cran.r-project.org/web/packages/crossval/}
+  Website: \url{http://cran.r-project.org/package=crossval}
 }
 \keyword{multivariate}
 \seealso{
