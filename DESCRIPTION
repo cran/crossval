@@ -1,6 +1,6 @@
 Package: crossval
-Version: 1.0.3
-Date: 2015-07-08
+Version: 1.0.4
+Date: 2021-09-17
 Title: Generic Functions for Cross Validation
 Author: Korbinian Strimmer.
 Maintainer: Korbinian Strimmer <strimmerlab@gmail.com>
@@ -10,8 +10,8 @@ Suggests: MASS, sda, care, binda
 Description: Contains generic functions for performing 
   cross validation and for computing diagnostic errors.
 License: GPL (>= 3)
-URL: http://cran.r-project.org/package=crossval
-Packaged: 2015-07-08 08:38:23 UTC; strimmer
+URL: https://cran.r-project.org/package=crossval
 NeedsCompilation: no
+Packaged: 2021-09-17 15:35:13 UTC; strimmer
 Repository: CRAN
-Date/Publication: 2015-07-08 13:21:53
+Date/Publication: 2021-09-17 16:10:02 UTC

@@ -3,7 +3,7 @@
 
 \title{Generic Function for Cross Valdidation }
 \usage{
-crossval(predfun, X, Y, K=10,  B=20, verbose=TRUE, ...)
+crossval(predfun, X, Y, K=10, B=20, verbose=TRUE, ...)
 }
 \arguments{
   \item{predfun}{Prediction function (see details).}
@@ -34,7 +34,7 @@ crossval(predfun, X, Y, K=10,  B=20, verbose=TRUE, ...)
 }
 
 \author{
- Korbinian Strimmer (\url{http://strimmerlab.org}).
+ Korbinian Strimmer (\url{https://strimmerlab.github.io}).
 }
 
 \seealso{\code{\link{confusionMatrix}}.}
@@ -72,18 +72,12 @@ set.seed(12345)
 cv.out = crossval(predfun.lda, X, Y, K=5, B=20, negative="1")
 
 cv.out$stat
-# FP   TP   TN   FN 
-#0.60 1.08 1.40 0.92
-
 diagnosticErrors(cv.out$stat)
-#     acc      sens      spec       ppv       npv       lor 
-#0.6200000 0.5400000 0.7000000 0.6428571 0.6034483 1.0076405 
-
 
 \dontrun{
 
-# Wine Data - see http://archive.ics.uci.edu/ml/datasets/Wine for details
-wine.data = read.table("http://archive.ics.uci.edu/ml/machine-learning-databases/wine/wine.data",
+# Wine Data - see https://archive.ics.uci.edu/ml/datasets/Wine for details
+wine.data = read.table("https://archive.ics.uci.edu/ml/machine-learning-databases/wine/wine.data",
           sep=",")
 c = wine.data[,1]
 X = as.matrix(wine.data[c!=3,-1])
@@ -95,12 +89,8 @@ set.seed(12345)
 cv.out = crossval(predfun.lda, X, Y, K=5, B=50, negative="1")
 
 cv.out$stat
-#   FP     TP     TN     FN 
-# 0.028 14.092 11.772  0.108
-
 diagnosticErrors(cv.out$stat)
-#      acc       sens       spec        ppv        npv        lor 
-# 0.9947692  0.9923944  0.9976271  0.9980170  0.9909091 10.9125059 
+
 }
 
 
@@ -129,11 +119,11 @@ predfun.lm = function(train.x, train.y, test.x, test.y)
 # prediction MSE using all variables
 set.seed(12345)
 cv.out = crossval(predfun.lm, x, y, K=5, B=20)
-c(cv.out$stat, cv.out$stat.se) # 68.06480  2.91447
+c(cv.out$stat, cv.out$stat.se)
 
 # and only two variables
 cv.out = crossval(predfun.lm, x[,c(1,3)], y, K=5, B=20)
-c(cv.out$stat, cv.out$stat.se) # 52.855325  1.878877
+c(cv.out$stat, cv.out$stat.se) 
 
 
 
