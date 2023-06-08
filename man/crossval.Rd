@@ -74,25 +74,6 @@ cv.out = crossval(predfun.lda, X, Y, K=5, B=20, negative="1")
 cv.out$stat
 diagnosticErrors(cv.out$stat)
 
-\dontrun{
-
-# Wine Data - see https://archive.ics.uci.edu/ml/datasets/Wine for details
-wine.data = read.table("https://archive.ics.uci.edu/ml/machine-learning-databases/wine/wine.data",
-          sep=",")
-c = wine.data[,1]
-X = as.matrix(wine.data[c!=3,-1])
-Y = as.factor(c[c!=3])
-dim(X) # 130  13
-levels(Y) # "1", "2"
-
-set.seed(12345)
-cv.out = crossval(predfun.lda, X, Y, K=5, B=50, negative="1")
-
-cv.out$stat
-diagnosticErrors(cv.out$stat)
-
-}
-
 
 # linear regression example
 

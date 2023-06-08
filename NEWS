@@ -3,6 +3,11 @@
            RELEASE HISTORY OF THE "crossval" PACKAGE
 
 
+Version 1.0.5:
+
+- fix warning message due to changed URL.
+
+
 Version 1.0.4:
 
 - update URLs in documentation.
